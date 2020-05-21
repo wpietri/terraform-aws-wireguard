@@ -6,7 +6,7 @@ resource "aws_eip" "wireguard" {
 }
 
 module "wireguard" {
-  source        = "git@github.com:jmhale/terraform-wireguard.git"
+  source        = "git@github.com:jmhale/terraform-aws-wireguard.git" # but you should fork and use yours
   ssh_key_id    = "ssh-key-id-0987654"
   vpc_id        = "vpc-01234567"
   subnet_ids    = ["subnet-01234567"]
