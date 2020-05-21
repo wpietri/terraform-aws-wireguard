@@ -11,7 +11,7 @@ Before using this module, you'll need to generate a key pair for your server and
 - Generate a key pair for the server
   - `wg genkey | tee server-privatekey | wg pubkey > server-publickey`
 - Add the server private key to the AWS SSM parameter: `/wireguard/wg-server-private-key`
-  - `aws ssm put-parameter --name /wireguard/wg-server-private-key --type SecureString --value $ServerPrivateKeyValue`
+  - ``aws ssm put-parameter --name /wireguard/wg-server-private-key --type SecureString --value `cat server-privatekey` ``
 - Add each client's public key, along with the next available IP address as a key:value pair to the wg_client_public_keys map. See Usage for details.
 
 ## Variables
